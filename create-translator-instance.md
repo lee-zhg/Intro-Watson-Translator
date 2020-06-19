@@ -32,7 +32,7 @@ To create an instance of IBM Watson™ Language Translator service in IBM Cloud,
 
 1. Select a region, for example `Dallas`.
 
-1. Select a `price plan`. Select an `Advanced` or `Premium` pricing plan.
+1. Select an `Advanced` or `Premium` pricing plan.
 
     > Note: Because, you are going to build a custom model with your dictionary, you must select an `Advanced` or `Premium` pricing plan.
 
@@ -54,6 +54,8 @@ The rest of the workshop will use your `Translator` instance created in this sec
 1. Select `Manage` in the left navigation pane.
 
 1. Both `API key` and `URL` are available on the right.
+
+    ![Translator service](docs/images/translator-service.png)
 
 1. Copy the `API key`.
 
