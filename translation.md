@@ -39,7 +39,7 @@ To test drive `Translator` API,
 
     The command uses `apikey` for API access credential. It returns the translation result in JSON format. It uses `en-es` translation model to translate `Hello, World!` and `How are you?` to Spanish.
 
-1. It should return
+1. It returns
 
     ```
     {
@@ -60,7 +60,7 @@ To test drive `Translator` API,
 
     The command uses `apikey` for API access credential. It returns the translation result in JSON format. It uses `en-zh` translation model to translate `Hello, World!` and `How are you?` to Chinese.
 
-1. It should return
+1. It returns
 
     ```
     {
