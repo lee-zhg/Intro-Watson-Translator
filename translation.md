@@ -74,7 +74,11 @@ To test drive `Translator` API,
     }
     ```
 
-1. Optionally, translate `Hello, world!` to your prefered lanaguage.
+1. Optionally, translate `Hello, world!` to your prefered lanaguage. To retrieve a list of `Translator model_id`,
+
+    ```
+    $ curl --user apikey:$apikey "$url/v3/models?version=2018-05-01"
+    ```
 
 1. Identify language of a text by calling `Translator` API.
 
