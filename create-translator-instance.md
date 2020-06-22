@@ -8,7 +8,7 @@ IBM Watson™ Language Translator allows you to translate text programmatically 
 You create an instance of IBM Watson™ Language Translator service in IBM Cloud.
 
 
-### Tools Used
+## Tools Used
 
 - Watson Language Translator
 
@@ -75,7 +75,7 @@ The rest of the workshop will use your `Translator` instance created in this sec
     $ export url=<your url>
     ```
 
-1. To verify you re connecting to an instance `Translator` service, execute the command
+1. To verify you are connected to an instance `Translator` service, execute the command
 
     ```
     $ curl --user "apikey:$apikey" "$url/v3/models?source=en&target=es&version=2018-05-01"
@@ -101,7 +101,7 @@ The rest of the workshop will use your `Translator` instance created in this sec
     }
     ```
 
-1. If the expected result were not returned, reset both `apikey` and `url` environment variable again.
+1. If the expected result were not returned, reset both `apikey` and `url` environment variable.
 
 
 ## Related Links

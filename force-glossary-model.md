@@ -157,8 +157,10 @@ To build a `forced glossary` custom model,
     Use the `Create model` method to train your model. In your request, specify the model ID of a customizable base model, and training data in either the forced_glossary or parallel_corpus parameters.
 
     ```
-    curl -X POST --user "apikey:$apikey" --form forced_glossary=@en-es-ForcedGlossary.tmx "$url/v3/models?version=2018-05-01&base_model_id=en-es&name=custom-english-to-spanish"
+    $ curl -X POST --user "apikey:$apikey" --form forced_glossary=@en-es-ForcedGlossary.tmx "$url/v3/models?version=2018-05-01&base_model_id=en-es&name=custom-english-to-spanish"
     ```
+
+    The customizations in the file completely overwrite the domain translaton data, including high frequency or high confidence phrase translations. You can upload only one glossary with a file size less than 10 MB per call. A forced glossary should contain single words or short phrases.
 
 1. The command returns
 
@@ -187,7 +189,7 @@ To build a `forced glossary` custom model,
     The following example gets information for the model identified by the model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608`.
 
     ```
-    curl --user "apikey:$apikey" "$url/v3/models/a6c701aa-9c3e-4d08-ad7d-f8113e501608?version=2018-05-01"
+    $ curl --user "apikey:$apikey" "$url/v3/models/a6c701aa-9c3e-4d08-ad7d-f8113e501608?version=2018-05-01"
     ```
 
     The status response attribute describes the state of the model in the training process:
@@ -225,11 +227,12 @@ To build a `forced glossary` custom model,
     The following example translates text with the custom model identified by the model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608`.
 
     ```
-    curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"a6c701aa-9c3e-4d08-ad7d-f8113e501608\"}" "$url/v3/translate?version=2018-05-01"
+    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"a6c701aa-9c3e-4d08-ad7d-f8113e501608\"}" "$url/v3/translate?version=2018-05-01"
     ```
 
 1. It returns
 
+    ```
     {
         "translations" : [ {
             "translation" : "Hola, Lijing Zhang. Por favor, no estacione en el 胡同."
@@ -237,6 +240,7 @@ To build a `forced glossary` custom model,
         "word_count" : 13,
         "character_count" : 49
     }
+    ```
 
     Both `Lee Zhang` and `alley` were translated in the way that you defined in the TMX file.
 
@@ -247,7 +251,7 @@ To build a `forced glossary` custom model,
     The following command deletes the translation model with model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608`.
 
     ```
-    curl -X DELETE --user "apikey:$apikey" "$url/v3/models/a6c701aa-9c3e-4d08-ad7d-f8113e501608?version=2018-05-01"
+    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/a6c701aa-9c3e-4d08-ad7d-f8113e501608?version=2018-05-01"
     ```
 
 

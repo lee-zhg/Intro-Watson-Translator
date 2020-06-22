@@ -8,7 +8,7 @@ IBM Watson™ Language Translator allows you to translate text programmatically 
 You call `Translator` API to translate sample text in this section.
 
 
-### Tools Used
+## Tools Used
 
 - Watson Language Translator
 

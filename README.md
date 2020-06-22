@@ -8,7 +8,7 @@ IBM Watson™ Language Translator allows you to translate text programmatically 
 This tutorial walks you through the various commands to translate text, to build custom dictionary in your specific domain and introduce Translator APIs.
 
 
-### Tools Used
+## Tools Used
 
 - Watson Language Translator
 
@@ -33,26 +33,26 @@ This tutorial walks you through the various commands to translate text, to build
    If you do NOT have GIT on your machine, you can just download the repository as a ZIP file.
 
 
-### Lab 1 - Create Language Translator service instance
+## Lab 1 - Create Language Translator service instance
 
 You are going to need a `Language Translator` service instance before you can translate text from one language to anoother. Follow the instructions in the [Create Language Translator service instance](create-translator-instance.md)
 
 
-### Lab 2 - Translation Test Drive
+## Lab 2 - Translation Test Drive
 
 In this lab, you explore Translator APIs and perform text translation. Follow the instructions in the [Translation Test Drive](translation.md)
 
 
-### Lab 3 - Build Force Glossary Custom Model
+## Lab 3 - Build Force Glossary Custom Model
 
 In this lab, you build a Force Glossary custom model. Follow the instructions in the [Build Force Glossary Custom Model](force-glossary-model.md)
 
 
-### Lab 4 - Build Parallel Corpus Custom Model
+## Lab 4 - Build Parallel Corpus Custom Model
 
 In this lab, you build a Parallel Corpus customer model. Follow the instructions in the [Build Parallel Corpus Custom Model](parallel-corpus-model.md)
 
-### Lab 5 - Calling Translator APIs in Sample Application
+## Lab 5 - Calling Translator APIs in Sample Application
 
 In this lab, you build a Parallel Corpus customer model. Follow the instructions in the [Calling Translator APIs in Sample Application](https://github.com/IBM/watson-speech-translator#use-the-web-app)
 

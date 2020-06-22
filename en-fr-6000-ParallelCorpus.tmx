@@ -14,6 +14,10 @@
       <tuv xml:lang="fr"><seg>Lijing Zhang</seg></tuv>
     </tu>
     <tu>
+      <tuv xml:lang="en"><seg>alley</seg></tuv>
+      <tuv xml:lang="fr"><seg>胡同</seg></tuv>
+    </tu>
+    <tu>
       <tuv xml:lang="en"><seg>Joint ECE/Eurostat/OECD Meeting on the Management of Statistical Information Systems (MSIS)</seg></tuv>
       <tuv xml:lang="fr"><seg>CES/AC.71/2005/5 (Summary) 28 janvier 2005</seg></tuv>
     </tu>
