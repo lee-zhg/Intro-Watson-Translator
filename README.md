@@ -26,7 +26,8 @@ This tutorial walks you through the various commands to translate text, to build
 
    ```
    $ git clone https://github.com/lee-zhg/Intro-Watson-Translator.git
-   cd Intro-Watson-Translator
+   
+   $ cd Intro-Watson-Translator
    ```
 
    If you do NOT have GIT on your machine, you can just download the repository as a ZIP file.
