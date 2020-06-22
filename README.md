@@ -54,7 +54,7 @@ In this lab, you build a Parallel Corpus customer model. Follow the instructions
 
 ### Lab 5 - Calling Translator APIs in Sample Application
 
-In this lab, you build a Parallel Corpus customer model. Follow the instructions in the [Calling Translator APIs in Sample Application](sample-app.md)
+In this lab, you build a Parallel Corpus customer model. Follow the instructions in the [Calling Translator APIs in Sample Application](https://github.com/IBM/watson-speech-translator#use-the-web-app)
 
 
 ## Related Links
