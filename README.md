@@ -38,7 +38,7 @@ This tutorial walks you through the various commands to translate text, to build
 You are going to need a `Language Translator` service instance before you can translate text from one language to anoother. Follow the instructions in the [Create Language Translator service instance](create-translator-instance.md)
 
 
-## Lab 2 - Translation Test Drive
+## Lab 2 - Translation API Test Drive
 
 In this lab, you explore Translator APIs and perform text translation. Follow the instructions in the [Translation Test Drive](translation.md)
 
