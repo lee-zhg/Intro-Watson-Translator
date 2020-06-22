@@ -43,16 +43,21 @@ You are going to need a `Language Translator` service instance before you can tr
 In this lab, you explore Translator APIs and perform text translation. Follow the instructions in the [Translation Test Drive](translation.md)
 
 
-## Lab 3 - Build Force Glossary Custom Model
+## Lab 3 - Translate Document
+
+In this lab, you explore document translation feature. Follow the instructions in the [Translation Test Drive](translation-document.md)
+
+
+## Lab 4 - Build Force Glossary Custom Model
 
 In this lab, you build a Force Glossary custom model. Follow the instructions in the [Build Force Glossary Custom Model](force-glossary-model.md)
 
 
-## Lab 4 - Build Parallel Corpus Custom Model
+## Lab 5 - Build Parallel Corpus Custom Model
 
 In this lab, you build a Parallel Corpus customer model. Follow the instructions in the [Build Parallel Corpus Custom Model](parallel-corpus-model.md)
 
-## Lab 5 - Calling Translator APIs in Sample Application
+## Lab 6 - Calling Translator APIs in Sample Application
 
 In this lab, you build a Parallel Corpus customer model. Follow the instructions in the [Calling Translator APIs in Sample Application](https://github.com/IBM/watson-speech-translator#use-the-web-app)
 
