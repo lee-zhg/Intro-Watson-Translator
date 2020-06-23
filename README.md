@@ -40,7 +40,7 @@ You are going to need a `Language Translator` service instance before you can tr
 
 ## Lab 2 - Translation API Test Drive
 
-In this lab, you explore Translator APIs and perform text translation. Follow the instructions in the [Translation Test Drive](translation.md)
+In this lab, you explore Translator APIs and perform text translation. Follow the instructions in the [Translation API Test Drive](translation.md)
 
 
 ## Lab 3 - Translate Document
