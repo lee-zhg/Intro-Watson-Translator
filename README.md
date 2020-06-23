@@ -45,7 +45,7 @@ In this lab, you explore Translator APIs and perform text translation. Follow th
 
 ## Lab 3 - Translate Document
 
-In this lab, you explore document translation feature. Follow the instructions in the [Translation Document](translation-document.md)
+In this lab, you explore document translation feature. Follow the instructions in the [Translate Document](translation-document.md)
 
 
 ## Lab 4 - Build Force Glossary Custom Model
