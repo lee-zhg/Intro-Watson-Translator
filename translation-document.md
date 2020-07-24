@@ -56,6 +56,13 @@ To test drive `Translator` API,
         "created" : "2020-06-22T21:35:12Z"
     }
     ```
+
+1. Record the `document_id`.
+
+    ```
+    export DOC_ID=<document_id>
+    ```
+
 1. To translate a document with a `custom` model, use the `model_id` parameter instead. For example, the following request translates the document with the custom model identified by the model ID `96221b69-8e46-42e4-a3c1-808e17c787ca` (which is NOT available for the workshop).
 
     curl -X POST --user "apikey:$apikey" --form "file=@sample.pdf" --form "model_id=96221b69-8e46-42e4-a3c1-808e17c787ca" "$url/v3/documents?version=2018-05-01"
@@ -67,7 +74,7 @@ To test drive `Translator` API,
     After you have submitted a document for translation, you can check the translation status to find out when the translated document is available to download. Replace the document ID `e3b10684-83b0-457b-8c74-0774b41ff9e5` with yours.
 
     ```
-    $ curl -X GET --user "apikey:$apikey" "$url/v3/documents/e3b10684-83b0-457b-8c74-0774b41ff9e5?version=2018-05-01"
+    $ curl -X GET --user "apikey:$apikey" "$url/v3/documents/$DOC_ID?version=2018-05-01"
     ```
 
 1. The document tramslation of `sample.pdf` should take no time before it becomoes available.
@@ -90,7 +97,7 @@ To test drive `Translator` API,
 1. Download the translated document. The following example request saves the translated document with document ID `e3b10684-83b0-457b-8c74-0774b41ff9e5` to the file `sample-es.pdf`. Replace the document ID.
 
     ```
-    $ curl -X GET --user "apikey:$apikey" --output "sample-es.pdf" "$url/v3/documents/e3b10684-83b0-457b-8c74-0774b41ff9e5/translated_document?version=2018-05-01"
+    $ curl -X GET --user "apikey:$apikey" --output "sample-es.pdf" "$url/v3/documents/$DOC_ID/translated_document?version=2018-05-01"
     ```
 
 1. Review the translated document `sample-es.pdf`. It is downloaded to the current working folder.
