@@ -285,10 +285,10 @@ To build a `parallel corpus` custom model,
 
 1. Check the status of the new custom model.
 
-    The following command gets information for the model identified by the model ID `$MODELID`. 
+    The following command gets information for the model identified by the model ID `$MODELID2`. 
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
+    $ curl --user "apikey:$apikey" "$url/v3/models/$MODELID2?version=2018-05-01"
     ```
 
 1. When the model status is available, your model is ready to use with your service instance.
