@@ -256,6 +256,20 @@ To build a `forced glossary` custom model,
     $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"en-es\"}" "$url/v3/translate?version=2018-05-01"
     ```
 
+1. It returns
+
+    ```
+    {
+        "translations" : [ {
+            "translation" : "Hola, Lee Zhang. Por favor, no estacione en el callejón."
+        } ],
+        "word_count" : 13,
+        "character_count" : 49
+    }
+    ```
+
+1. Compare the translation result of the custom model and the base model. The term `alley` and `Lee Zhang` were translated as we expected.
+
 1. Deleting a custom translation model. **Don't run the command if you plan to use the custom model again**.
 
     To delete a custom translation model, use the Delete model method.
