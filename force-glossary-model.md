@@ -250,6 +250,12 @@ To build a `forced glossary` custom model,
 
     Both `Lee Zhang` and `alley` were translated in the way that you defined in the TMX file.
 
+1. Translate text with the base model.
+
+    ```
+    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"en-es\"}" "$url/v3/translate?version=2018-05-01"
+    ```
+
 1. Deleting a custom translation model. **Don't run the command if you plan to use the custom model again**.
 
     To delete a custom translation model, use the Delete model method.
