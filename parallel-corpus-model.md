@@ -277,6 +277,12 @@ To build a `parallel corpus` custom model,
 
     The API response will contain details about your custom model, including its model ID.
 
+1. Record the new model ID.
+
+    ```
+    export MODELID2=<new model ID>
+    ```
+
 1. Check the status of the new custom model.
 
     The following command gets information for the model identified by the model ID `$MODELID`. 
@@ -301,12 +307,6 @@ To build a `parallel corpus` custom model,
         "name" : "custom-english-to-french-2",
         "training_log" : null
     }
-    ```
-
-1. Record the new model ID.
-
-    ```
-    export MODELID2=<new model ID>
     ```
 
 1. Translate text with your new custom model.
