@@ -182,6 +182,12 @@ To build a `forced glossary` custom model,
 
     The API response will contain details about your custom model, including its `model_id`.
 
+1. Record the `model_id`.
+
+    ```
+    export MODELID=<model_id>
+    ```
+
 1. Check the status of the new custom model.
 
     Model training might take anywhere from a couple of minutes (for forced glossaries) to several hours (for large parallel corpora) depending on how much training data is involved. To check if your model is available, use the `Get model details` method and specify the model ID that you received in the service response of the previous step. Also, you can check the status of all of your models with the List models method.
@@ -189,7 +195,7 @@ To build a `forced glossary` custom model,
     The following command gets information for the model identified by the model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608`. Replace the model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608` with yours.
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models/a6c701aa-9c3e-4d08-ad7d-f8113e501608?version=2018-05-01"
+    $ curl --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
     ```
 
     The status response attribute describes the state of the model in the training process:
@@ -227,7 +233,7 @@ To build a `forced glossary` custom model,
     The following command translates text with the custom model identified by the model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608`. Replace the model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608` with yours.
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"a6c701aa-9c3e-4d08-ad7d-f8113e501608\"}" "$url/v3/translate?version=2018-05-01"
+    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"$MODELID\"}" "$url/v3/translate?version=2018-05-01"
     ```
 
 1. It returns
@@ -251,7 +257,7 @@ To build a `forced glossary` custom model,
     The following command deletes the translation model with model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608`. Replace model ID `a6c701aa-9c3e-4d08-ad7d-f8113e501608` with yours.
 
     ```
-    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/a6c701aa-9c3e-4d08-ad7d-f8113e501608?version=2018-05-01"
+    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
     ```
 
 
