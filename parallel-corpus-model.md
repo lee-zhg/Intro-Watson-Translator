@@ -99,14 +99,14 @@ To build a `parallel corpus` custom model,
 1. The terminal window should have been ready for making API calls. If not, execute command
 
     ```
-    $ export apikey=<your API key>
-    $ export url=<your url>
+    export apikey=<your API key>
+    export url=<your url>
     ```
 
 1. Identify if a specific model, for example `en-fr`, supports customization, execute command
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models?source=en&target=fr&version=2018-05-01"
+    curl --user "apikey:$apikey" "$url/v3/models?source=en&target=fr&version=2018-05-01"
     ```
 
 1. It returns the following JSON data. `"customizable" : true` shows that the model supports customization.
@@ -132,7 +132,7 @@ To build a `parallel corpus` custom model,
 1. Optionally, you may execute the command below and retrieve all models for customization support.
 
     ```
-    $ curl --user apikey:$apikey "$url/v3/models?version=2018-05-01"
+    curl --user apikey:$apikey "$url/v3/models?version=2018-05-01"
     ```
 
 1. Create your training data. 
@@ -144,7 +144,7 @@ To build a `parallel corpus` custom model,
     Use the `Create model` method to train your model. In your request, specify the model ID of a customizable base model, and training data in the parallel_corpus parameters.
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --form parallel_corpus=@en-fr-6000-ParallelCorpus.tmx "$url/v3/models?version=2018-05-01&base_model_id=en-fr&name=custom-english-to-french"
+    curl -X POST --user "apikey:$apikey" --form parallel_corpus=@en-fr-6000-ParallelCorpus.tmx "$url/v3/models?version=2018-05-01&base_model_id=en-fr&name=custom-english-to-french"
     ```
 
     You can upload multiple parallel_corpus files in one request. All uploaded parallel_corpus files combined, your parallel corpus must contain at least 5,000 parallel sentences to train successfully.
@@ -182,8 +182,12 @@ To build a `parallel corpus` custom model,
     The following command gets information for the model identified by the model ID `$MODELID`.
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
+    curl --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
+    ```
 
+    It returns
+
+    ```
     {
         "model_id" : "43745eda-7fde-4998-a62a-26cf0e795973",
         "source" : "en",
@@ -234,7 +238,7 @@ To build a `parallel corpus` custom model,
     The following command translates text with the custom model identified by the model ID `$MODELID`.
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"$MODELID\"}" "$url/v3/translate?version=2018-05-01"
+    curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"$MODELID\"}" "$url/v3/translate?version=2018-05-01"
     ```
 
 1. It returns
@@ -254,7 +258,7 @@ To build a `parallel corpus` custom model,
 1. You can apply a `forced glossary` to a model that has been customized with a parallel corpus. 
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --form forced_glossary=@en-fr-ForcedGlossary.tmx "$url/v3/models?version=2018-05-01&base_model_id=$MODELID&name=custom-english-to-french-2"
+    curl -X POST --user "apikey:$apikey" --form forced_glossary=@en-fr-ForcedGlossary.tmx "$url/v3/models?version=2018-05-01&base_model_id=$MODELID&name=custom-english-to-french-2"
     ```
 
 1. The command returns
@@ -288,7 +292,7 @@ To build a `parallel corpus` custom model,
     The following command gets information for the model identified by the model ID `$MODELID2`. 
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models/$MODELID2?version=2018-05-01"
+    curl --user "apikey:$apikey" "$url/v3/models/$MODELID2?version=2018-05-01"
     ```
 
 1. When the model status is available, your model is ready to use with your service instance.
@@ -314,7 +318,7 @@ To build a `parallel corpus` custom model,
     To use your custom model, specify the text that you want to translate and the custom model's model ID in the Translate method. The following command translates text with the custom model identified by the model ID `MODELID2`.
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"$MODELID2\"}" "$url/v3/translate?version=2018-05-01"
+    curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"$MODELID2\"}" "$url/v3/translate?version=2018-05-01"
     ```
 
 1. It returns
@@ -338,8 +342,8 @@ To build a `parallel corpus` custom model,
     To delete a custom translation model, use the Delete model method. The following command deletes the translation model with the model ID `$MODELID2` & `$MODELID`. 
 
     ```
-    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
-    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID2?version=2018-05-01"
+    curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
+    curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID2?version=2018-05-01"
     ```
 
 

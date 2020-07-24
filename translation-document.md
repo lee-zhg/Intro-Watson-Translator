@@ -31,14 +31,14 @@ To test drive `Translator` API,
 1. The terminal window should have been ready for making API calls. If not, execute command
 
     ```
-    $ export apikey=<your API key>
-    $ export url=<your url>
+    export apikey=<your API key>
+    export url=<your url>
     ```
 
 1.  Submit a request to translate `sample.pdf` from English to Spanish.
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --form "file=@sample.pdf" --form "source=en" --form "target=es" "$url/v3/documents?version=2018-05-01"
+    curl -X POST --user "apikey:$apikey" --form "file=@sample.pdf" --form "source=en" --form "target=es" "$url/v3/documents?version=2018-05-01"
     ```
 
     The command uses `apikey` for API access credential. It takes input file, source language and target language as parameters.
@@ -74,7 +74,7 @@ To test drive `Translator` API,
     After you have submitted a document for translation, you can check the translation status to find out when the translated document is available to download. Replace the document ID `e3b10684-83b0-457b-8c74-0774b41ff9e5` with yours.
 
     ```
-    $ curl -X GET --user "apikey:$apikey" "$url/v3/documents/$DOC_ID?version=2018-05-01"
+    curl -X GET --user "apikey:$apikey" "$url/v3/documents/$DOC_ID?version=2018-05-01"
     ```
 
 1. The document tramslation of `sample.pdf` should take no time before it becomoes available.
@@ -94,10 +94,10 @@ To test drive `Translator` API,
     }
     ```
 
-1. Download the translated document. The following example request saves the translated document with document ID `e3b10684-83b0-457b-8c74-0774b41ff9e5` to the file `sample-es.pdf`. Replace the document ID.
+1. Download the translated document. The following example request saves the translated document with document ID `$DOC_ID` to the file `sample-es.pdf`. 
 
     ```
-    $ curl -X GET --user "apikey:$apikey" --output "sample-es.pdf" "$url/v3/documents/$DOC_ID/translated_document?version=2018-05-01"
+    curl -X GET --user "apikey:$apikey" --output "sample-es.pdf" "$url/v3/documents/$DOC_ID/translated_document?version=2018-05-01"
     ```
 
 1. Review the translated document `sample-es.pdf`. It is downloaded to the current working folder.
@@ -105,7 +105,7 @@ To test drive `Translator` API,
 1. Delete documents. To delete the original submission of `sample.pdf` and its Spanish translation, execute the command below. Replace the `e3b10684-83b0-457b-8c74-0774b41ff9e5` with your document ID.
 
     ```
-    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/documents/$DOC_ID?version=2018-05-01"
+    curl -X DELETE --user "apikey:$apikey" "$url/v3/documents/$DOC_ID?version=2018-05-01"
     ```
 
     >Note: Original documents and any associated translated documents are deleted automatically after they have not been used for a certain period of time. 

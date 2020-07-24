@@ -64,7 +64,7 @@ The rest of the workshop will use your `Translator` instance created in this sec
 1. Execute command
 
     ```
-    $ export apikey=<your API key>
+    export apikey=<your API key>
     ```
 
 1. Copy the `URL`.
@@ -72,13 +72,13 @@ The rest of the workshop will use your `Translator` instance created in this sec
 1. Execute command below in the terminal window.
 
     ```
-    $ export url=<your url>
+    export url=<your url>
     ```
 
 1. To verify you are connected to an instance `Translator` service, execute the command
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models?source=en&target=es&version=2018-05-01"
+    curl --user "apikey:$apikey" "$url/v3/models?source=en&target=es&version=2018-05-01"
     ```
 
 1. It should return
