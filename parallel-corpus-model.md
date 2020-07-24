@@ -251,7 +251,7 @@ To build a `parallel corpus` custom model,
 
     Neither `Lee Zhang` nor `alley` were translated in the way that you defined in the TMX file `en-fr-6000-ParallelCorpus.tmx`. Use a `parallel corpus` when you want your custom model to learn from general translation patterns in your sample TMX file. What your model learns from a parallel corpus can improve translation results for input text that the model hasn't been trained on. However, the general improvements from parallel corpus customization are less predictable than the mandatory results you get from forced glossary customization.
 
-1. You can apply a `forced glossary` to a model that has been customized with a parallel corpus. Replace the model ID `43745eda-7fde-4998-a62a-26cf0e795973` with yours.
+1. You can apply a `forced glossary` to a model that has been customized with a parallel corpus. 
 
     ```
     $ curl -X POST --user "apikey:$apikey" --form forced_glossary=@en-fr-ForcedGlossary.tmx "$url/v3/models?version=2018-05-01&base_model_id=$MODELID&name=custom-english-to-french-2"
@@ -279,10 +279,10 @@ To build a `parallel corpus` custom model,
 
 1. Check the status of the new custom model.
 
-    The following command gets information for the model identified by the model ID `6277bffd-f884-4c5c-9825-ac41136f1b69`. Replace the model ID `6277bffd-f884-4c5c-9825-ac41136f1b69` with yours.
+    The following command gets information for the model identified by the model ID `$MODELID`. 
 
     ```
-    $ curl --user "apikey:$apikey" "$url/v3/models/6277bffd-f884-4c5c-9825-ac41136f1b69?version=2018-05-01"
+    $ curl --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
     ```
 
 1. When the model status is available, your model is ready to use with your service instance.
@@ -303,12 +303,18 @@ To build a `parallel corpus` custom model,
     }
     ```
 
-1. Translate text with your new custom model.
-
-    To use your custom model, specify the text that you want to translate and the custom model's model ID in the Translate method. The following command translates text with the custom model identified by the model ID `6277bffd-f884-4c5c-9825-ac41136f1b69`. Replace the model ID `6277bffd-f884-4c5c-9825-ac41136f1b69` with yours.
+1. Record the new model ID.
 
     ```
-    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"6277bffd-f884-4c5c-9825-ac41136f1b69\"}" "$url/v3/translate?version=2018-05-01"
+    export MODELID2=<new model ID>
+    ```
+
+1. Translate text with your new custom model.
+
+    To use your custom model, specify the text that you want to translate and the custom model's model ID in the Translate method. The following command translates text with the custom model identified by the model ID `MODELID2`.
+
+    ```
+    $ curl -X POST --user "apikey:$apikey" --header "Content-Type: application/json" --data "{\"text\":\"Hello, Lee Zhang. Please don't park in the alley.\",\"model_id\":\"$MODELID2\"}" "$url/v3/translate?version=2018-05-01"
     ```
 
 1. It returns
@@ -329,10 +335,11 @@ To build a `parallel corpus` custom model,
 
 1. Deleting a custom translation model. **Don't run the command if you plan to use the custom model again**.
 
-    To delete a custom translation model, use the Delete model method. The following command deletes the translation model with the model ID `6277bffd-f884-4c5c-9825-ac41136f1b69`. Replace the model ID `6277bffd-f884-4c5c-9825-ac41136f1b69` with yours.
+    To delete a custom translation model, use the Delete model method. The following command deletes the translation model with the model ID `$MODELID2` & `$MODELID`. 
 
     ```
-    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/43745eda-7fde-4998-a62a-26cf0e795973?version=2018-05-01"
+    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID?version=2018-05-01"
+    $ curl -X DELETE --user "apikey:$apikey" "$url/v3/models/$MODELID2?version=2018-05-01"
     ```
 
 
